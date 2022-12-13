@@ -63,7 +63,7 @@
   --border-size: 2px;
   --border-angle: 0turn;
   background-color: #FFF;
-  background-image: conic-gradient(from var(--border-angle), #FFF, #FFF 50%, #FFF), conic-gradient(from var(--border-angle), #0014FF, #82C3EC, rgb(64, 163, 183));
+  background-image: conic-gradient(from var(--border-angle), #FFF, #FFF 50%, #FFF), conic-gradient(from var(--border-angle), #FFF, #0014FF, #82C3EC);
   background-size: calc(100% - var(--border-size) * 2) calc(100% - var(--border-size) * 2), cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -82,9 +82,9 @@
 .painel {
   width: 100%;
   max-width: 30em;
-  height: 20em;
+  height: 12em;
   background-color: #FFF;
-  outline: 2px dashed gray;
+  outline: 4px dashed transparent;
   margin: 1em 0 1em 0;
 }
 

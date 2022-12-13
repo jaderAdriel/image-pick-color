@@ -100,7 +100,7 @@ $c-neutral : gray;
             ),
             conic-gradient(
                 from var(--border-angle),
-                $c-primary, $c-primary100, $c-tertiary);
+                #FFF ,$c-primary, $c-primary100);
 
         background-size: 
             calc(100% - (var(--border-size) * 2))
@@ -127,9 +127,9 @@ $c-neutral : gray;
 .painel {
     width: 100%;
     max-width: 30em;
-    height: 20em;
+    height: 12em;
     background-color: #FFF;
-    outline: 2px dashed gray;
+    outline: 4px dashed transparent;
     margin: 1em 0 1em 0;
 }
 
