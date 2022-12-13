@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickColor</title>
+
+    <link rel="stylesheet" href="assets/style/css/style.css">
+
+    <script type="module" src="assets/js/canvas.js"></script>
+    <script type="module" src="assets/js/main.js" defer></script>
+    
+    <script src="https://kit.fontawesome.com/82bb25904d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper main-wrapper">
+
+        <main id="main">
+
+            <section id="image-upload-section">
+                <form action=".">
+                    <div class="dragzone" id="dragzone"> 
+
+                        <div class="dragzone__icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+
+                        <span class="dragzone__title">Drop file here</span> 
+                        <span class="dragzone__title">Or <span class="btn dragzone__button">browse</span></span>
+                        <span class="dragzone__info">supports : JPEG, JPG, PNG & SVG</span>
+
+                        <input type="file" hidden accept="image/*" id="fileInput">
+                    </div>
+                </form>
+                
+                <div id="imagePreview" class="preview">
+                    <div class="button" id="closePreview"><i class="fas fa-xmark"></i></div>
+                    <div class="file"></div>
+                </div>
+            </section>
+            
+            <section class="">
+                <div class="painel"><canvas id="main-canvas"></canvas></div>
+                <div class="palette"></div>
+            </section>
+
+        </main>
+        
+
+    </div>
+</body>
+</html>
