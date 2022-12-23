@@ -59,7 +59,7 @@ export class App {
     addColor(element) {
         element.innerHtml = '';
 
-
+        this.removeRepeatedColor(20);
 
         this.data.forEach((color) => {
 
