@@ -118,6 +118,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
+  cursor: pointer;
   background-color: rgb(255, 255, 255);
 }
 .palette .color__copy i {
