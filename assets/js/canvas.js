@@ -28,11 +28,41 @@ export class App {
         this.img.element.onload = (e) => {this.drawImage()};
     }
 
+    removeRepeatedColor(interval = 20) {
+        const checkInterval = (a, b, interval) => {
+            interval = interval/2;
+            if (a - interval <= b && a - interval <= b) return true;
+            return false;
+        }
+
+        this.data = this.data.reduce((acc,curr) => {
+
+            let isOnInteral = 1;
+
+
+            for (let index = 0; index < acc.length; index++) {
+                if (!( checkInterval( curr.r, acc[index].r, interval ) &&
+                       checkInterval( curr.g, acc[index].g, interval ) &&
+                       checkInterval( curr.b, acc[index].b, interval ))) continue;
+                isOnInteral++;
+                
+            }
+            if (isOnInteral > 1) return acc;
+
+            acc.push(curr);
+
+            return acc;
+
+        }, []);
+    }
+
     addColor(element) {
-        element.innerHtml = ''
+        element.innerHtml = '';
+
+
+
         this.data.forEach((color) => {
-            let cor = (color.r + color.g + color.b);
-            if (cor < 20) return;
+
             const newDiv = document.createElement("div");
             newDiv.classList.add('color');
             newDiv.innerHTML = `
@@ -40,6 +70,7 @@ export class App {
                 <span class="color__code"> rgb(${color.r},${color.g},${color.b}) </span>
                 `
             newDiv.style.backgroundColor = `rgb(${color.r},${color.g},${color.b})`
+
             element.append( newDiv)
         });
 
@@ -51,7 +82,6 @@ export class App {
 
             color_copy.addEventListener('click', () => {
                 navigator.clipboard.writeText(color_code.innerText);
-
             });
         });
     }
